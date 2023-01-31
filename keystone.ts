@@ -41,10 +41,8 @@ export default withAuth(
 			Image,
 		},
 		session: statelessSessions({
-			secret: 'ABCDEFGH1234567887654321HGFEDCBA',
+			secret: 'ABCDEFGHgdsfsdcx1234567887654321HGFEDCBA',
 			maxAge: 60 * 60 * 24,
-			secure: true,
-			path: '/',
 		}),
 		ui: {
 			isAccessAllowed: (context) => !!context.session?.data,
