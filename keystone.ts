@@ -16,6 +16,7 @@ import Notification from './schemas/notification';
 import Page from './schemas/page';
 import User from './schemas/user';
 import { config } from '@keystone-6/core';
+import { statelessSessions } from '@keystone-6/core/session';
 
 export default withAuth(
 	config({
@@ -39,7 +40,12 @@ export default withAuth(
 			Notification,
 			Image,
 		},
-		session,
+		session: statelessSessions({
+			secret: 'ABCDEFGH1234567887654321HGFEDCBA',
+			maxAge: 60 * 60 * 24,
+			secure: true,
+			path: '/',
+		}),
 		ui: {
 			isAccessAllowed: (context) => !!context.session?.data,
 		},
