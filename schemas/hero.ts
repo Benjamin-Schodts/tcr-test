@@ -27,10 +27,10 @@ export default list({
 		}),
 		image: cloudinaryImage({
 			cloudinary: {
-				cloudName: process.env.CLOUDINARY_CLOUD_NAME || '',
-				apiKey: process.env.CLOUDINARY_API_KEY || '',
-				apiSecret: process.env.CLOUDINARY_API_SECRET || '',
-				folder: process.env.CLOUDINARY_API_FOLDER || '',
+				cloudName: 'raine' || '',
+				apiKey: '129116343565762' || '',
+				apiSecret: 'VUXq96-ELkVkaguPxMnH0_FTOqI' || '',
+				folder: 'hero' || '',
 			},
 		}),
 	},
