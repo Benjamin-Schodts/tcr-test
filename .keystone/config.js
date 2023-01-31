@@ -31,10 +31,10 @@ __export(keystone_exports, {
 module.exports = __toCommonJS(keystone_exports);
 
 // auth.ts
-var import_crypto = require("crypto");
 var import_auth = require("@keystone-6/auth");
+var import_crypto = require("crypto");
 var import_session = require("@keystone-6/core/session");
-var sessionSecret = process.env.SESSION_SECRET;
+var sessionSecret = (0, import_crypto.randomBytes)(32).toString("hex");
 if (!sessionSecret && process.env.NODE_ENV !== "production") {
   sessionSecret = (0, import_crypto.randomBytes)(32).toString("hex");
 }
